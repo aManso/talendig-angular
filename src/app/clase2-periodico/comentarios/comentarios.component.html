@@ -1,0 +1,9 @@
+<div class="comentarios-container">
+    <span>Deja tus comentarios</span>
+    <textarea name="" id="" cols="30" rows="10" placeholder="comentario" maxlength="160" #comentarioRef></textarea>
+    <input type="text" placeholder="autor" #autorRef (keyup.enter)="enviarComentario( comentarioRef.value, autorRef.value )">
+    <div>
+        <span>{{comentario}}: </span>
+        <span>{{autor}}</span>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+@import './../shared/style/mixins.scss';
+
+// .noticias {
+//     display: inline-block;
+//   	margin: 50px;
+//    	width: calc(50% - 100px);
+//    	box-sizing: border-box;
+//    	padding: 40px;
+//    	border-radius: 5px;
+//    	border: solid 1px;
+// }
+		
+.noticias-locales {
+    @include seccion-noticias(bisque)
+}
+	
+.noticias-internacionales {
+    @include seccion-noticias(aliceblue)
+}
+
+.hide {
+    visibility: hidden!important;
+ }
+ 
+ .imagen-portada {
+     width: 100%;
+ }

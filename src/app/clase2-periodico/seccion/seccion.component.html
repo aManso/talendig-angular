@@ -1,0 +1,10 @@
+<div class="like-wrapper">
+    <button class="like-button" (click)="like()">ME GUSTA</button>
+    <span class="like-number">{{likes}}</span>
+</div>
+<ng-content select="[title]"></ng-content>
+<ng-content></ng-content>
+<ng-container *ngTemplateOutlet="footer"></ng-container>
+<ng-template #footer>
+   <footer><i>Fte: Talendig</i></footer>
+</ng-template>

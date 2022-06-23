@@ -1,0 +1,32 @@
+<!-- <div class="noticias noticias-locales" [ngClass]="{'hide': hideLocals}">
+    <app-seccion [likes]="noticiasLocales.likes" (likeEvEmitter)="sumarLike($event, noticiasLocales)">
+        <div>{{noticiasLocales.contenido}}</div> 
+        <div title>{{noticiasLocales.titulo}}</div>
+        <img src="{{noticiasLocales.imagen}}" alt="" class="imagen-portada">
+        <app-comentarios></app-comentarios>
+    </app-seccion>
+</div>
+<div class="noticias noticias-internacionales" [style.visibility]="visibilityInternacionales">
+    <app-seccion [likes]="noticiasInternacionales.likes" (likeEvEmitter)="sumarLike($event, noticiasInternacionales)">
+        <div>{{noticiasInternacionales.contenido}}</div> 
+        <div title>{{noticiasInternacionales.titulo}}</div>
+        <img src="{{noticiasInternacionales.imagen}}" alt="" class="imagen-portada">
+        <app-comentarios></app-comentarios>
+    </app-seccion>
+</div> -->
+
+
+<ng-container *ngFor="let section of sections; let i = index">
+    <div [class]="section.class" class="noticias" [ngClass]="{'hide': hideLocals && section.class === 'noticias-locales'}" [style.visibility]="visibilityInternacionales">
+        <app-seccion [likes]="section.likes" (likeEvEmitter)="sumarLike($event, section)">
+            <div>{{section.contenido}}</div> 
+            <div title>{{section.titulo}}</div>
+            <img src="{{section.imagen}}" alt="" class="imagen-portada">
+            <app-comentarios></app-comentarios>
+        </app-seccion>
+        <button (click)="eliminar(i)">Eliminar</button>
+    </div>
+</ng-container>
+<!-- 
+<button (click)="hideLocals = !hideLocals">Mostrar/Ocultar locales</button>
+<button (click)="hideInternationals()">Mostrar/Ocultar internacionales</button> -->
