@@ -1,0 +1,11 @@
+@mixin seccion-noticias($fondo) {
+    background-color: $fondo;
+    display: inline-block;
+  	margin: 50px;
+   	width: calc(50% - 100px);
+   	box-sizing: border-box;
+   	padding: 40px;
+   	border-radius: 5px;
+   	border: solid 1px;
+    position: relative;
+}
